@@ -11,7 +11,7 @@ void printTraingleOfStars(int rows, int cols){
     }
 };
 
-void printColsNumberTraingle(int rows, int cols){
+void printRowsNumberTraingle(int rows, int cols){
      for(int i = 1; i <= rows; i++){
         for(int j = 1; j <= cols; j++){
             cout << i << " ";
@@ -30,9 +30,9 @@ int main(){
     printTraingleOfStars(rows,cols);
 
     cout <<  endl;
-    cout << "-------------- " << endl;
+    cout << "--------------" << endl;
     cout <<  endl;
 
-    printColsNumberTraingle(rows,cols);
+    printRowsNumberTraingle(rows,cols);
     return 1;
 }
