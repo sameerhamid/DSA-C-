@@ -1,157 +1,176 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-// Function to print a rectangle pattern of stars
-// Example for rows=3, cols=4:
-// * * * *
-// * * * *
-// * * * *
-void printRectangleOfStars(int rows, int cols){
-    for(int i = 0; i < rows; i++){          // Loop through rows
-        for(int j = 0; j < cols; j++){      // Loop through columns
-            cout << "* ";                   // Print star
+// 1. Rectangle filled with stars
+void printStarRectangle(int rows, int cols) {
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            cout << "* ";
         }
-        cout << endl;                       // Move to next line after each row
+        cout << endl;
     }
-};
+}
 
-// Function to print a rectangle where each row contains the row number
-// Example for rows=3, cols=4:
-// 1 1 1 1
-// 2 2 2 2
-// 3 3 3 3
-void printRectangleOfRowNumbers(int rows, int cols){
-     for(int i = 1; i <= rows; i++){        // Row number starts from 1
-        for(int j = 1; j <= cols; j++){
-            cout << i << " ";               // Print current row number
+// 2. Rectangle with same row number in each row
+void printRowNumberRectangle(int rows, int cols) {
+    for (int i = 1; i <= rows; i++) {
+        for (int j = 1; j <= cols; j++) {
+            cout << i << " ";
         }
-        cout << endl;                       // Move to next line
+        cout << endl;
     }
-};
+}
 
-// Function to print a rectangle where each row contains the column number
-// Example for rows=3, cols=4:
-// 1 2 3 4
-// 1 2 3 4
-// 1 2 3 4
-void printRectangleOfColsNumbers(int rows, int cols){
-     for(int i = 1; i <= rows; i++){        // Row number starts from 1
-        for(int j = 1; j <= cols; j++){
-            cout << j << " ";               // Print current column number
+// 3. Rectangle with column numbers in each row
+void printColumnNumberRectangle(int rows, int cols) {
+    for (int i = 1; i <= rows; i++) {
+        for (int j = 1; j <= cols; j++) {
+            cout << j << " ";
         }
-        cout << endl;                       // Move to next line
+        cout << endl;
     }
-};
+}
 
-// Function to print a triangle pattern of stars
-// Example for rows=4,
-// *
-// * *
-// * * *
-// * * *  *
-void printTriangleOfStarts(int rows){
-     for(int i = 1; i <= rows; i++){        // Row number starts from 1
-        for(int j = 1; j <= i; j++){
-            cout << "* " << " ";            // Print start
+// 4. Right triangle of stars
+void printStarTriangle(int rows) {
+    for (int i = 1; i <= rows; i++) {
+        for (int j = 1; j <= i; j++) {
+            cout << "* ";
         }
-        cout << endl;                       // Move to next line
+        cout << endl;
     }
-};
+}
 
-
-// Function to print a triangle pattern of rows
-// Example for rows=4,
-// 1
-// 2 2
-// 3 3 3
-// 4 4 4 4
-void printTriangleOfNumbers(int rows){
-     for(int i = 1; i <= rows; i++){        // Row number starts from 1
-        for(int j = 1; j <= i; j++){
-            cout << i+1 << " ";            // Print row
+// 5. Right triangle with same row number
+void printRowNumberTriangle(int rows) {
+    for (int i = 1; i <= rows; i++) {
+        for (int j = 1; j <= i; j++) {
+            cout << i << " ";
         }
-        cout << endl;                       // Move to next line
+        cout << endl;
     }
-};
+}
 
-// Function to print a triangle pattern of non repeat numbers
-// Example for rows=4,
-// 1
-// 2 3
-// 4 5 6
-// 7 8 9 10
-void printTriangleOfNonRepeatNumbers(int rows){
-     for(int i = 1; i <= rows; i++){        // Row number starts from 1
-        for(int j = 0; j < i; j++){
-            cout << i+j << " ";            // Print
+// 6. Right triangle with continuous increasing numbers
+void printContinuousNumberTriangle(int rows) {
+    int num = 1;
+    for (int i = 1; i <= rows; i++) {
+        for (int j = 1; j <= i; j++) {
+            cout << num++ << " ";
         }
-        cout << endl;                       // Move to next line
+        cout << endl;
     }
-};
+}
 
-
-// Function to print a triangle pattern of  revers numbers
-// Example for rows=4,
-// 1
-// 2 1
-// 3 2 1
-// 4 3 2 1
-void printTriangleOfReverseNumbers(int rows){
-     for(int i = 1; i <= rows; i++){        // Row number starts from 1
-        for(int j = 0; j < i; j++){
-            cout << i-j << " ";            // Print
+// 7. Right triangle with reverse counting in each row
+void printReverseNumberTriangle(int rows) {
+    for (int i = 1; i <= rows; i++) {
+        for (int j = i; j >= 1; j--) {
+            cout << j << " ";
         }
-        cout << endl;                       // Move to next line
+        cout << endl;
     }
-};
+}
 
-int main(){
+// 8. Rectangle with repeated letters in each row
+void printRepeatedLetterRectangle(int rows, int cols) {
+    for (int i = 0; i < rows; i++) {
+        char ch = 'A' + i;
+        for (int j = 0; j < cols; j++) {
+            cout << ch << " ";
+        }
+        cout << endl;
+    }
+}
+
+// 9. Rectangle with ABCD repeated in each row
+void printABCPerRowRectangle(int rows, int cols) {
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            char ch = 'A' + j;
+            cout << ch << " ";
+        }
+        cout << endl;
+    }
+}
+
+// 10. Rectangle with letters shifted per row
+void printShiftedLetterRectangle(int rows, int cols) {
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            char ch = 'A' + i + j;
+            cout << ch << " ";
+        }
+        cout << endl;
+    }
+}
+
+// 11. Right triangle with repeated letters per row
+void printRepeatedLetterTriangle(int rows) {
+    for (int i = 0; i < rows; i++) {
+        char ch = 'A' + i;
+        for (int j = 0; j <= i; j++) {
+            cout << ch << " ";
+        }
+        cout << endl;
+    }
+}
+
+// 12. Right triangle with consecutive letters per row
+void printConsecutiveLetterTriangle(int rows) {
+    for (int i = 0; i < rows; i++) {
+        char ch = 'A' + i;
+        for (int j = 0; j <= i; j++) {
+            cout << char(ch + j) << " ";
+        }
+        cout << endl;
+    }
+}
+
+// 13. Right triangle with reverse letters in each row
+void printReverseLetterTriangle(int rows) {
+    for (int i = 0; i < rows; i++) {
+        char ch = 'A' + i;
+        for (int j = 0; j <= i; j++) {
+            cout << char(ch - j) << " ";
+        }
+        cout << endl;
+    }
+}
+
+int main() {
     int rows, cols;
 
-    // Input from user
-    cout << "Enter number of rows: " << endl;
+    cout << "Enter number of rows: ";
     cin >> rows;
-    cout << "Enter number of columns: " << endl;
+    cout << "Enter number of columns: ";
     cin >> cols;
 
-    // Print rectangle of stars
-    printRectangleOfStars(rows, cols);
+    printStarRectangle(rows, cols);
+    cout << "--------------\n";
+    printRowNumberRectangle(rows, cols);
+    cout << "--------------\n";
+    printColumnNumberRectangle(rows, cols);
+    cout << "--------------\n";
+    printStarTriangle(rows);
+    cout << "--------------\n";
+    printRowNumberTriangle(rows);
+    cout << "--------------\n";
+    printContinuousNumberTriangle(rows);
+    cout << "--------------\n";
+    printReverseNumberTriangle(rows);
+    cout << "--------------\n";
+    printRepeatedLetterRectangle(rows, cols);
+    cout << "--------------\n";
+    printABCPerRowRectangle(rows, cols);
+    cout << "--------------\n";
+    printShiftedLetterRectangle(rows, cols);
+    cout << "--------------\n";
+    printRepeatedLetterTriangle(rows);
+    cout << "--------------\n";
+    printConsecutiveLetterTriangle(rows);
+    cout << "--------------\n";
+    printReverseLetterTriangle(rows);
 
-    cout << endl;
-    cout << "--------------" << endl;
-    cout << endl;
-
-    // Print rectangle of row numbers
-    printRectangleOfRowNumbers(rows, cols);
-
-    cout << endl;
-    cout << "--------------" << endl;
-    cout << endl;
-
-    printRectangleOfColsNumbers(rows, cols);
-
-    cout << endl;
-    cout << "--------------" << endl;
-    cout << endl;
-
-    printTriangleOfStarts(rows);
-
-    cout << endl;
-    cout << "--------------" << endl;
-    cout << endl;
-
-    printTriangleOfNumbers(rows);
-
-    cout << endl;
-    cout << "--------------" << endl;
-    cout << endl;
-
-    printTriangleOfNonRepeatNumbers(rows);
-
-    cout << endl;
-    cout << "--------------" << endl;
-    cout << endl;
-
-    printTriangleOfReverseNumbers(rows);
     return 0;
 }
