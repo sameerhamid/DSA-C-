@@ -29,6 +29,34 @@ void printRectangleOfRowNumbers(int rows, int cols){
     }
 };
 
+// Function to print a rectangle where each row contains the column number
+// Example for rows=3, cols=4:
+// 1 2 3 4
+// 1 2 3 4
+// 1 2 3 4
+void printRectangleOfColsNumbers(int rows, int cols){
+     for(int i = 1; i <= rows; i++){        // Row number starts from 1
+        for(int j = 1; j <= cols; j++){
+            cout << j << " ";               // Print current column number
+        }
+        cout << endl;                       // Move to next line
+    }
+};
+
+// Function to print a triangle pattern of stars
+// Example for rows=4,
+// *
+// * *
+// * * *
+// * * *  *
+void printTriangleOfStarts(int rows){
+     for(int i = 1; i <= rows; i++){        // Row number starts from 1
+        for(int j = 1; j <= i; j++){
+            cout << "* " << " ";            // Print current column number
+        }
+        cout << endl;                       // Move to next line
+    }
+};
 int main(){
     int rows, cols;
 
@@ -47,6 +75,18 @@ int main(){
 
     // Print rectangle of row numbers
     printRectangleOfRowNumbers(rows, cols);
+
+    cout << endl;
+    cout << "--------------" << endl;
+    cout << endl;
+
+    printRectangleOfColsNumbers(rows, cols);
+
+    cout << endl;
+    cout << "--------------" << endl;
+    cout << endl;
+
+    printTriangleOfStarts(rows);
 
     return 0;
 }
