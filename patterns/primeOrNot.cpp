@@ -52,11 +52,59 @@ void printRectangleOfColsNumbers(int rows, int cols){
 void printTriangleOfStarts(int rows){
      for(int i = 1; i <= rows; i++){        // Row number starts from 1
         for(int j = 1; j <= i; j++){
-            cout << "* " << " ";            // Print current column number
+            cout << "* " << " ";            // Print start
         }
         cout << endl;                       // Move to next line
     }
 };
+
+
+// Function to print a triangle pattern of rows
+// Example for rows=4,
+// 1
+// 2 2
+// 3 3 3
+// 4 4 4 4
+void printTriangleOfNumbers(int rows){
+     for(int i = 1; i <= rows; i++){        // Row number starts from 1
+        for(int j = 1; j <= i; j++){
+            cout << i+1 << " ";            // Print row
+        }
+        cout << endl;                       // Move to next line
+    }
+};
+
+// Function to print a triangle pattern of non repeat numbers
+// Example for rows=4,
+// 1
+// 2 3
+// 4 5 6
+// 7 8 9 10
+void printTriangleOfNonRepeatNumbers(int rows){
+     for(int i = 1; i <= rows; i++){        // Row number starts from 1
+        for(int j = 0; j < i; j++){
+            cout << i+j << " ";            // Print
+        }
+        cout << endl;                       // Move to next line
+    }
+};
+
+
+// Function to print a triangle pattern of  revers numbers
+// Example for rows=4,
+// 1
+// 2 1
+// 3 2 1
+// 4 3 2 1
+void printTriangleOfReverseNumbers(int rows){
+     for(int i = 1; i <= rows; i++){        // Row number starts from 1
+        for(int j = 0; j < i; j++){
+            cout << i-j << " ";            // Print
+        }
+        cout << endl;                       // Move to next line
+    }
+};
+
 int main(){
     int rows, cols;
 
@@ -88,5 +136,22 @@ int main(){
 
     printTriangleOfStarts(rows);
 
+    cout << endl;
+    cout << "--------------" << endl;
+    cout << endl;
+
+    printTriangleOfNumbers(rows);
+
+    cout << endl;
+    cout << "--------------" << endl;
+    cout << endl;
+
+    printTriangleOfNonRepeatNumbers(rows);
+
+    cout << endl;
+    cout << "--------------" << endl;
+    cout << endl;
+
+    printTriangleOfReverseNumbers(rows);
     return 0;
 }
