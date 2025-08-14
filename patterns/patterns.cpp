@@ -197,6 +197,57 @@ void printReverseLetterTriangle(int rows) {
     }
 }
 
+// 14. Right-aligned increasing triangle of stars
+// Example (rows=4):
+//       *
+//     * *
+//   * * *
+// * * * *
+void printRightAlignedStarTriangle(int rows) {
+    for (int i = 0; i < rows; i++) {
+        for(int j = 0; j < rows - i - 1; j++) {
+            cout << "  "; // spaces before stars
+        }
+        for (int j = 0; j <= i; j++) {
+            cout << "* ";
+        }
+        cout << endl;
+    }
+}
+
+// 15. Left-aligned decreasing triangle of stars
+// Example (rows=4):
+// * * * *
+// * * *
+// * *
+// *
+void printLeftAlignedInvertedStarTriangle(int rows) {
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < rows - i; j++) {
+            cout << "* ";
+        }
+        cout << endl;
+    }
+}
+
+// 16. Right-aligned decreasing triangle of stars
+// Example (rows=4):
+// * * * *
+//   * * *
+//     * *
+//       *
+void printRightAlignedInvertedStarTriangle(int rows) {
+    for (int i = 0; i < rows; i++) {
+        for(int j = 0; j < i; j++) {
+            cout << "  "; // spaces before stars
+        }
+        for (int j = 0; j < rows - i; j++) {
+            cout << "* ";
+        }
+        cout << endl;
+    }
+}
+
 
 
 
@@ -233,6 +284,12 @@ int main() {
     printConsecutiveLetterTriangle(rows);
     cout << "--------------\n";
     printReverseLetterTriangle(rows);
+    cout << "--------------\n";
+    printRightAlignedStarTriangle(rows);
+     cout << "--------------\n";
+    printLeftAlignedInvertedStarTriangle(rows);
+    cout << "--------------\n";
+    printRightAlignedInvertedStarTriangle(rows);
 
     return 0;
 }
