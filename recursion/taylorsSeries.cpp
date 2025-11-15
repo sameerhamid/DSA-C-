@@ -14,10 +14,27 @@ double taylorSeriesSum(int x, int n){
     return r + p / f;
 
 }
-// Honers Rule
+
 // now using loop with time complexity -> o(n)
 
 double taylorSeriesSumUsingLoop(int x, int n){
+    double r = 1;
+    double num = 1;
+    double den = 1;
+    int i = 1;
+    for(int i=1; i<=n; i++){
+        num = num * x;
+        den = den * i;
+        r = r + num / den;
+        n--;
+    }
+    return r;
+}
+
+// Honers Rule
+// now using loop with time complexity -> o(n)
+
+double taylorSeriesSumUsingLoopOptimized(int x, int n){
     double r = 1.0;
     while(n>0){
         r = 1 + r * x/n;
@@ -40,7 +57,8 @@ double taylorSeriesSumOptomize(int x, int n){
 
 int main(){
     cout << "taylorSeriesSum: " << taylorSeriesSum(3, 15) << endl;
-    cout << "taylorSeriesSumUsingLoop: " <<  taylorSeriesSumUsingLoop(3, 15) << endl;
+    cout << "taylorSeriesSumUsingLoop: " << taylorSeriesSumUsingLoop(3, 15) << endl;
+    cout << "taylorSeriesSumUsingLoopOptimized: " <<  taylorSeriesSumUsingLoopOptimized(3, 15) << endl;
     cout << "taylorSeriesSumOptomize: " << taylorSeriesSumOptomize(3, 15) << endl;
     return 0;
 }
