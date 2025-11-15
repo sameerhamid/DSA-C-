@@ -15,6 +15,6 @@ double taylorSeriesSum(int x, int n){
 }
 
 int main(){
-    cout << taylorSeriesSum(3, 10) << endl;
+    cout << taylorSeriesSum(3, 15) << endl;
     return 0;
 }
