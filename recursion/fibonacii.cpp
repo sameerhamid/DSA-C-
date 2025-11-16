@@ -33,9 +33,9 @@ int fibonaciiOptimize(int n){
 // Itrative with -> o(n)
 
 int fibonaciiItrative(int n){
-    int t1 = 0, t2 = 1, r;
+    int t1 = 0, t2 = 1, r = 0;
     if(n<=1){
-        return n;
+        return n ;
     }
     for(int i=2; i<=n; i++){
         r = t1 + t2;
