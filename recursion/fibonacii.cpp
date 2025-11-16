@@ -27,6 +27,7 @@ int fibonaciiOptimize(int n){
     if(arr[n-1] == -1){
         arr[n-1] = fibonaciiOptimize(n-1);
     }
+    arr[n] = arr[n-2] + arr[n-1];
     return arr[n-2] + arr[n-1];
 }
 
