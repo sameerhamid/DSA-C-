@@ -18,6 +18,12 @@ void Display(struct Array arr)
     }
 };
 
+void Append(struct Array &arr, int elt){
+    if(arr.length < arr.size){
+        arr.A[arr.length++] = elt;
+    }
+}
+
 int main(){
     struct Array arr;
     int n;
@@ -34,6 +40,7 @@ int main(){
         cin >> arr.A[i];
     }
     arr.length = n;
+    Append(arr, 20);
 
     Display(arr);
     cout << endl;
