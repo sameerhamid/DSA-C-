@@ -34,6 +34,18 @@ void Insert(struct Array &arr, int index, int elt){
     }
 }
 
+int Delete(struct Array &arr, int index){
+    if(index < arr.length){
+        int deleteElt = arr.A[index];
+        for(int i = index; i < arr.length-1; i++){
+            arr.A[i] = arr.A[i+1];
+        }
+        arr.length--;
+        return deleteElt;
+    }
+    return 0;
+}
+
 int main(){
     struct Array arr;
     int n;
@@ -50,8 +62,10 @@ int main(){
         cin >> arr.A[i];
     }
     arr.length = n;
-    Append(arr, 20);
-    Insert(arr, 1, 7);
+    // Append(arr, 20);
+    // Insert(arr, 1, 7);
+    int deletedElt = Delete(arr, 2);
+    cout << deletedElt << endl;
 
     Display(arr);
     cout << endl;
