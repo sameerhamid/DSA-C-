@@ -24,6 +24,16 @@ void Append(struct Array &arr, int elt){
     }
 }
 
+void Insert(struct Array &arr, int index, int elt){
+    if(index >=0 && index < arr.length){
+        for(int i = arr.length; i > index; i--){
+             arr.A[i] = arr.A[i-1];
+        }
+        arr.A[index] = elt;
+        arr.length++;
+    }
+}
+
 int main(){
     struct Array arr;
     int n;
@@ -41,6 +51,7 @@ int main(){
     }
     arr.length = n;
     Append(arr, 20);
+    Insert(arr, 1, 7);
 
     Display(arr);
     cout << endl;
